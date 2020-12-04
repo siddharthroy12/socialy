@@ -1,0 +1,34 @@
+.page-title {
+  display: block !important;
+  font-size: 2rem;
+  margin-top: 10px;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 100 !important;
+  background-color:#131519 !important;
+}
+
+
+.ui.secondary.pointing.menu .active.item {
+  border-color: #F02A56 !important;
+  color: #F02A56 !important;
+}
+
+.ui.secondary.pointing.menu .active.item:hover {
+border-color: #F02A56 !important;
+color: #F02A56 !important;
+}
+
+.ui.secondary.pointing.menu .item {
+  color: #F02A56 !important;
+}
+
+.ui[class*="right floated"].button, .ui[class*="right floated"].buttons {
+  background-color: #F02A56 !important;
+}
