@@ -6,11 +6,12 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "yarn --cwd client start",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\""
+    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --cwd client install && yarn --cwd client build"
   },
   "license": "MIT",
   "dependencies": {
-    "apollo-server": "^2.19.0",
+    "apollo-server-express": "^2.19.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "graphql": "^15.4.0",
