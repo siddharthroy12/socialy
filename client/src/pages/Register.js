@@ -20,22 +20,26 @@ function Register({ history }) {
     const [addUser, { loading, error: mutationError }] = useMutation(REGISTER_USER, {
         errorPolicy: 'all',
         update(proxy, result) {
-            context.login(result.data.login)
+            console.log(result.data.register)
+            context.login(result.data.register)
+            console.log(1)
             window.location.href = window.location.origin
+        },
+        onError() {
+            if (mutationError) {
+                errors = mutationError.graphQLErrors[0].extensions.exception.errors
+            }
         },
         variables: values,
     })
 
-    if (mutationError) {
-        errors = mutationError.graphQLErrors[0].extensions.exception.errors
-    }
 
     function registerUser() {
         addUser().catch(e => console.log(e))
     }
     
     return (
-        <Container text style={{marginTop: "60px"}}>
+        <Container text style={{marginTop: "150px"}}>
             <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
                 <h1 style={{marginTop: "40px"}}>Register</h1>
                 <Form.Input

@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom'
 
 import { AuthContext } from '../context/auth'
 import LikeButton from './LikeButton'
+import DeleteButton from './DeleteButton'
 
 function PostCard({post: { body, createdAt, username, id, likeCount, commentCount, likes }}) {
     const { user } = useContext(AuthContext)
+
+    function deleteCallback() {
+        window.location.href = window.location.origin
+    }
 
     return (
         <Card fluid>
@@ -15,7 +20,7 @@ function PostCard({post: { body, createdAt, username, id, likeCount, commentCoun
                 <Image
                     floated='left'
                     size='mini'
-                    src='https://react.semantic-ui.com/images/avatar/large/molly.png'
+                    src='/img/user.png'
                 />
                 <Card.Header>{username}</Card.Header>
                 <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
@@ -33,11 +38,7 @@ function PostCard({post: { body, createdAt, username, id, likeCount, commentCoun
                         {commentCount}
                     </Label>
                 </Button>
-                {user && user.username === username && (
-                    <Button as='div' color='red' onClick={e => console.log('Delete Post')} floated="right">
-                        <Icon name="trash" style={{margin: 0}}/>
-                    </Button>
-                )}
+                {user && user.username === username && <DeleteButton postId={id} callback={deleteCallback} />}
             </Card.Content>
         </Card>
     )

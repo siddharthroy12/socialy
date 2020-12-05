@@ -9,7 +9,8 @@ function generateToken(user) {
     return jwt.sign({
         id: user.id,
         email: user.email,
-        username: user.username
+        username: user.username,
+        createdAt: user.createdAt
     }, process.env.JWT_SECRET, { expiresIn: '24h'})
 }
 

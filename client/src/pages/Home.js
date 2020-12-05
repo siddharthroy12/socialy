@@ -12,11 +12,11 @@ function Home() {
     const { loading, data } = useQuery(FETCH_POST_QUERY)
     const posts = data ? data.getPosts : {}
     return (
-        <Container text style={{marginTop: "60px"}}>
+        <Container text>
         <Grid columns={1}>
             <Grid.Row>
                 {user && (
-                    <Grid.Column>
+                    <Grid.Column style={{marginTop: "150px"}}>
                         <PostForm />
                     </Grid.Column>
                 )}

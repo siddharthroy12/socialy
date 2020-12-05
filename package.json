@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "yarn --cwd client start"
+    "client": "yarn --cwd client start",
+    "dev": "concurrently \"yarn run server\" \"yarn run client\""
   },
   "license": "MIT",
   "dependencies": {
@@ -17,6 +18,7 @@
     "mongoose": "^5.10.18"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "nodemon": "^2.0.6"
   }
 }

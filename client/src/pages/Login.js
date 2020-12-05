@@ -18,6 +18,7 @@ function Login({ history }) {
     const [loginUser, { loading, error: mutationError }] = useMutation(LOGIN_USER, {
         errorPolicy: 'all',
         update(proxy, result) {
+            console.log(result.data.login)
             context.login(result.data.login)
             window.location.href = window.location.origin
         },
@@ -34,7 +35,7 @@ function Login({ history }) {
     }
 
     return (
-        <Container text style={{marginTop: "60px"}}>
+        <Container text style={{marginTop: "150px"}}>
             <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
                 <h1 style={{marginTop: "40px"}}>Login</h1>
                 <Form.Input
