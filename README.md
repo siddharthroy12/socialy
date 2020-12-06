@@ -2,7 +2,7 @@ Social Media App
 
 > Social Media WebApp built with ReactJS and GraphQL
 
-![screenshot](https://github.com/siddharthroy12/socialy/blob/main/client/img/screenshot.png)
+![screenshot](https://github.com/siddharthroy12/socialy/blob/main/client/public/img/screenshot.png)
 
 ## Live Site
 [https://solialy.herokuapp.com/](https://solialy.herokuapp.com/)
